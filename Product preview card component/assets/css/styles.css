@@ -1,0 +1,155 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 20px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+
+  --dark-blue: hsl(212, 21%, 14%);
+  --grayish-blue: hsl(228, 12%, 48%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--cream);
+  width: 100vw;
+  max-width: 90rem;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Fraunces", sans-serif;
+}
+
+p {
+  font-size: 14px;
+}
+
+span {
+  color: var(--grayish-blue);
+  letter-spacing: 4pt;
+  font-size: 12px;
+  display: block;
+}
+
+button {
+  background: var(--dark-cyan);
+  color: var(--white);
+  padding: 15px 30px;
+  border-radius: 8px;
+  border: none;
+  outline: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.1pt;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.8);
+}
+
+.card {
+  display: flex;
+  margin: 0 auto;
+}
+
+.card-image,
+.card-content {
+  width: 300px;
+  height: 440px;
+}
+
+.card-image {
+  display: block;
+  background-image: url("../images/image-product-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+  border-radius: 8px 0 0 8px;
+}
+
+.card-content {
+  background: var(--white);
+  padding: 28px;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+}
+
+.card-content h1 {
+  line-height: 1;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.card-content p {
+  color: var(--grayish-blue);
+  line-height: 22px;
+}
+
+.card-price {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.card-price strong {
+  font-family: "Fraunces", sans-serif;
+  font-size: 28px;
+  color: var(--dark-cyan);
+}
+
+.card-price s {
+  color: var(--grayish-blue);
+  font-size: 12px;
+}
+
+@media (max-width: 501px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .card-image,
+  .card-content {
+    width: 350px;
+    height: 380px;
+  }
+
+  .card-content {
+    border-radius: 0 0 8px 8px;
+    gap: 20px;
+  }
+
+  .card-image {
+    border-radius: 8px 8px 0 0;
+    height: 220px;
+  }
+}
