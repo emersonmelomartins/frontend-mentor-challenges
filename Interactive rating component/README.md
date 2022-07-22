@@ -1,6 +1,10 @@
+# Preview
+
+https://prismatic-centaur-1300a9.netlify.app/
+
 # Frontend Mentor - Interactive rating component
 
-![Design preview for the Interactive rating component coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Interactive rating component coding challenge](./assets/design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
