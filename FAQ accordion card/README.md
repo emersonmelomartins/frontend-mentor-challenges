@@ -1,6 +1,9 @@
+# Preview
+https://inspiring-llama-0e03f0.netlify.app/
+
 # Frontend Mentor - FAQ accordion card
 
-![Design preview for the FAQ accordion card coding challenge](./design/desktop-preview.jpg)
+![Design preview for the FAQ accordion card coding challenge](./assets/design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
