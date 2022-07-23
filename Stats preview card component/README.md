@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/stats-preview-card-component-with-sass-7ZIWx6CpTf](https://www.frontendmentor.io/solutions/stats-preview-card-component-with-sass-7ZIWx6CpTf)
 - Live Site URL: [https://radiant-cendol-b10395.netlify.app/](https://radiant-cendol-b10395.netlify.app/)
 
 ## My process
