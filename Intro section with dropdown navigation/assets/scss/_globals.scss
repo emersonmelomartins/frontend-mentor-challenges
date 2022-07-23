@@ -1,0 +1,80 @@
+:root {
+  --almost-white: hsl(0, 0%, 98%);
+  --medium-gray: hsl(0, 0%, 41%);
+  --almost-black: hsl(0, 0%, 8%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 16px -> default browser font size
+// 93.75% -> (16 - 0.9375) = 15
+// 87.5% -> (15 - 0.875) = 14
+html {
+  @media (max-width: 1080px) {
+    font-size: 93.75%;
+  }
+  @media (max-width: 720px) {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Epilogue", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.breakline {
+  display: block;
+
+  @media (max-width: 768px) {
+    display: inline;
+  }
+}
+
+.btn {
+  padding: 1.2rem 2rem;
+  background: var(--almost-black);
+  color: var(--almost-white);
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: all 0.1s;
+  border: 1px solid var(--almost-black);
+  outline: 0;
+  &:hover {
+    background: var(--almost-white);
+    color: var(--almost-black);
+  }
+}

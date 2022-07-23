@@ -1,0 +1,13 @@
+{
+  "name": "intro-section-with-dropdown-navigation",
+  "version": "1.0.0",
+  "description": "frontend mentor challenge",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch assets/scss:assets/css"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.54.0"
+  }
+}

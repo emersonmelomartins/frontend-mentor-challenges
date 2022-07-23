@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body onload="load()">
+    <header>
+      <nav class="navbar">
+        <strong class="brand">snap</strong>
+        <div class="navbar__menu">
+          <ul class="navbar__menu--list">
+            <li class="navbar__menu--close">
+              <button class="close-btn">
+                <img src="./assets/images/icon-close-menu.svg" alt="X" />
+              </button>
+            </li>
+            <li class="navbar__dropdown">
+              <a class="navbar__dropdown--title" href="#">Features</a>
+
+              <div class="navbar__dropdown--content">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./assets/images/icon-todo.svg"
+                        alt="Todo list icon"
+                      />
+                      Todo List</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./assets/images/icon-calendar.svg"
+                        alt="Calendar icon"
+                      />
+                      Calendar</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./assets/images/icon-reminders.svg"
+                        alt="Reminders icon"
+                      />
+                      Reminders</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./assets/images/icon-planning.svg"
+                        alt="Planning icon"
+                      />
+                      Planning</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navbar__dropdown">
+              <a href="#" class="navbar__dropdown--title">Company</a>
+
+              <div class="navbar__dropdown--content">
+                <ul>
+                  <li>
+                    <a href="#">History</a>
+                  </li>
+                  <li>
+                    <a href="#">Our Team</a>
+                  </li>
+                  <li>
+                    <a href="#">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+          </ul>
+
+          <div class="navbar__menu--login">
+            <ul>
+              <li>
+                <a href="#">Login</a>
+              </li>
+              <li>
+                <a href="#" class="outline">Register</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navbar__hamburger">
+          <img src="./assets/images/icon-menu.svg" alt="Hamburger menu icon" />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="introduction">
+        <div class="introduction__content">
+          <h1>Make <span class="breakline"></span>remote work</h1>
+          <p>
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+
+          <button class="btn">Learn more</button>
+
+          <div class="introduction__clients">
+            <img src="./assets/images/client-databiz.svg" alt="Databiz Logo" />
+            <img
+              src="./assets/images/client-audiophile.svg"
+              alt="Audiophile Logo"
+            />
+            <img src="./assets/images/client-meet.svg" alt="Meet Logo" />
+            <img src="./assets/images/client-maker.svg" alt="Maker Logo" />
+          </div>
+        </div>
+
+        <div class="introduction__image">
+          <picture>
+            <source
+              media="(max-width:768px)"
+              srcset="./assets/images/image-hero-mobile.png"
+            />
+            <img
+              src="./assets/images/image-hero-desktop.png"
+              alt="Man handling a laptop and abstract figures around"
+            />
+          </picture>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
