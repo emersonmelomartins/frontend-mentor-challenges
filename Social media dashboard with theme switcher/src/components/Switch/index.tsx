@@ -1,6 +1,5 @@
 import { ChangeEventHandler } from "react";
 import { SwitchContainer } from "./styles";
-import { Sun } from "phosphor-react";
 
 interface ISwitchProps {
   onChange: ChangeEventHandler<HTMLInputElement>;
