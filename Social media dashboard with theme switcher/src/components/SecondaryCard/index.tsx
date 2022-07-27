@@ -46,7 +46,7 @@ export function SecondaryCard({
       <CardBody color={footerColor}>
         <h2>{amount}</h2>
         <div>
-          <img src={footerColor === "positive" ? upSvg : downSvg} />
+          <img src={footerColor === "positive" ? upSvg : downSvg} alt={footerColor === "positive" ? "up chevron icon" : "down chevron icon"} />
           <strong>{footerText}</strong>
         </div>
       </CardBody>

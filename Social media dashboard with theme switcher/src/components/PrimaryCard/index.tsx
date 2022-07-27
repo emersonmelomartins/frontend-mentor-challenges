@@ -52,7 +52,7 @@ export function PrimaryCard({
       </CardBody>
 
       <CardFooter color={footerColor}>
-        <img src={footerColor === "positive" ? upSvg : downSvg} />
+        <img src={footerColor === "positive" ? upSvg : downSvg} alt={footerColor === "positive" ? "up chevron icon" : "down chevron icon"} />
         <strong>{footerText}</strong>
       </CardFooter>
     </CardContainer>
