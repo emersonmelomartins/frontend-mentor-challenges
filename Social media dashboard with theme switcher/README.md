@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/social-media-dashboard-with-theme-switcher-with-react-d_tIng1YvU](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/social-media-dashboard-with-theme-switcher-with-react-d_tIng1YvU](https://www.frontendmentor.io/solutions/social-media-dashboard-with-theme-switcher-with-react-d_tIng1YvU)
 - Live Site URL: [https://eloquent-croquembouche-42971c.netlify.app/](https://eloquent-croquembouche-42971c.netlify.app/)
 
 ## My process
