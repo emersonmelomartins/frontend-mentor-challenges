@@ -1,13 +1,26 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.main`
-  width: 68.75rem; //1100px
   margin: -6.5rem auto 0 auto;
+  max-width: 68.75rem;
 
-  .primary-card-list {
+  h2 {
+    color: ${props => props.theme["text-primary"]}
+  }
+
+  .card-list {
+    gap: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+
+    h2 {
+      text-align: center;
+    }
   }
 `;

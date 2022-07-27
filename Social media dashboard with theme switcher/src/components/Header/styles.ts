@@ -14,7 +14,6 @@ export const HeaderContent = styled.div`
   height: 15rem;
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   padding-top: 2rem;
 
   h1 {
@@ -23,5 +22,13 @@ export const HeaderContent = styled.div`
 
   strong {
     color: ${(props) => props.theme["text-secondary"]};
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    gap: 2rem;
+    padding: 2rem 0;
   }
 `;

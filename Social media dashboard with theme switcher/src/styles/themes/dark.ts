@@ -2,6 +2,7 @@ export const darkTheme = {
   "top-bg": "hsl(232, 19%, 15%)",
   "bottom-bg": "hsl(230, 17%, 14%)",
   "card-bg": "hsl(228, 28%, 20%)",
+  "card-hover": "brightness(1.15)",
   "toggle-bg":
     "linear-gradient(45deg, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 100%)",
   "text-primary": "hsl(0, 0%, 100%)",

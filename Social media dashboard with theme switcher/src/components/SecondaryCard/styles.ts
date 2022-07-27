@@ -7,91 +7,72 @@ export const CARD_TYPES = {
   instagram: "instagram",
 } as const;
 
-export type CardBorderType = keyof typeof CARD_TYPES;
+export type SecondaryCardBorderType = keyof typeof CARD_TYPES;
 
-interface ICardProps {
-  type: CardBorderType;
+interface ISecondaryCardProps {
+  type: SecondaryCardBorderType;
 }
 
-export const CardContainer = styled.div<ICardProps>`
+export const CardContainer = styled.div<ISecondaryCardProps>`
   position: relative;
   width: 15.625rem;
-  height: 13.75rem;
+  height: 8rem;
   background: ${(props) => props.theme["card-bg"]};
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 1.5rem;
-  
+  padding: 2rem 1.5rem;
   border-radius: 4px;
-  ${(props) =>
-    props.type === "instagram"
-      ? `
-          border-image: ${props.theme[CARD_TYPES[props.type]]} 1;
-          border-top: double 5px transparent;
-          background-image: 
-            linear-gradient(${props.theme["card-bg"]}, 
-            ${props.theme["card-bg"]}), ${props.theme.instagram};
-          background-origin: border-box;
-          background-clip: content-box, border-box;
-          background-repeat: no-repeat;
-        `
-      : 
-        `
-          border-top: 5px solid ${props.theme[CARD_TYPES[props.type]]};
-        `
+
+  &:hover {
+    filter: ${(props) => props.theme["card-hover"]};
   }
 `;
 
 export const CardHeader = styled.header`
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
 
   strong {
-    color: ${props => props.theme["text-secondary"]};
+    color: ${(props) => props.theme["text-secondary"]};
     font-size: 0.75rem;
   }
+`;
 
-`
-
-export const CardBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h2 {
-    font-size: 3rem;
-    color: ${props => props.theme["text-primary"]}
-  }
-
-  span {
-    text-transform: uppercase;
-    color: ${props => props.theme["text-secondary"]};
-    letter-spacing: 0.35rem;
-    font-size: 0.65rem;
-  }
-`
-
-const CARD_FOOTER_COLORS = {
+const CARD_BODY_COLORS = {
   positive: "lime-green",
-  negative: "bright-red"
+  negative: "bright-red",
 } as const;
 
-export type CardFooterColorType = keyof typeof CARD_FOOTER_COLORS;
+export type SecondaryCardBodyColorType = keyof typeof CARD_BODY_COLORS;
 
-interface ICardFooterProps {
-  color: CardFooterColorType
+interface ISecondaryCardBodyProps {
+  color: SecondaryCardBodyColorType;
 }
 
-export const CardFooter = styled.footer<ICardFooterProps>`
-  position: relative;
-  color: ${props => props.theme[CARD_FOOTER_COLORS[props.color]]};
-
+export const CardBody = styled.div<ISecondaryCardBodyProps>`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  width: 100%;
 
-`
+  h2 {
+    font-size: 2rem;
+    color: ${(props) => props.theme["text-primary"]};
+  }
+
+  div {
+    position: relative;
+    color: ${(props) => props.theme[CARD_BODY_COLORS[props.color]]};
+    font-size: 0.75rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+`;

@@ -1,10 +1,11 @@
 import { PrimaryCard } from "../../components/PrimaryCard";
+import { SecondaryCard } from "../../components/SecondaryCard";
 import { HomeContainer } from "./styles";
 
 export function Home() {
   return (
     <HomeContainer>
-      <div className="primary-card-list">
+      <div className="card-list">
         <PrimaryCard
           type="facebook"
           headerText="@nathanf"
@@ -42,10 +43,76 @@ export function Home() {
         />
       </div>
 
-      {/* <h2>Overview - Today</h2> */}
+      <br />
 
-      <div className="secondary-card-list">
-        
+      <h2>Overview - Today</h2>
+
+      <br />
+
+      <div className="card-list">
+        <SecondaryCard
+          type="facebook"
+          amount="87"
+          amountType="Page Views"
+          footerText="3%"
+          footerColor="positive"
+        />
+
+        <SecondaryCard
+          type="facebook"
+          amount="57"
+          amountType="Likes"
+          footerText="2%"
+          footerColor="negative"
+        />
+
+        <SecondaryCard
+          type="instagram"
+          amount="5462"
+          amountType="Likes"
+          footerText="2257%"
+          footerColor="positive"
+        />
+
+        <SecondaryCard
+          type="instagram"
+          amount="52k"
+          amountType="Profile Views"
+          footerText="1375%"
+          footerColor="positive"
+        />
+
+        <SecondaryCard
+          type="twitter"
+          amount="117"
+          amountType="Retweets"
+          footerText="303%"
+          footerColor="positive"
+        />
+
+        <SecondaryCard
+          type="twitter"
+          amount="507"
+          amountType="Likes"
+          footerText="553%"
+          footerColor="positive"
+        />
+
+        <SecondaryCard
+          type="youtube"
+          amount="107"
+          amountType="Likes"
+          footerText="19%"
+          footerColor="negative"
+        />
+
+        <SecondaryCard
+          type="youtube"
+          amount="1407"
+          amountType="Total Views"
+          footerText="12%"
+          footerColor="negative"
+        />
       </div>
     </HomeContainer>
   );

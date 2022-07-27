@@ -2,6 +2,7 @@ export const lightTheme = {
   "top-bg": "hsl(225, 100%, 98%)",
   "bottom-bg": "hsl(0, 0%, 100%)",
   "card-bg": "hsl(227, 47%, 96%)",
+  "card-hover": "brightness(0.95)",
   "toggle-bg": "linear-gradient(45deg, red 0%, orange 100%);",
   "text-primary": "hsl(230, 17%, 14%)",
   "text-secondary": "hsl(228, 12%, 44%)",

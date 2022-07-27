@@ -18,13 +18,13 @@ export const CardContainer = styled.div<IPrimaryCardProps>`
   width: 15.625rem;
   height: 13.75rem;
   background: ${(props) => props.theme["card-bg"]};
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 1.5rem;
-  
+
   border-radius: 4px;
   ${(props) =>
     props.type === "instagram"
@@ -38,10 +38,12 @@ export const CardContainer = styled.div<IPrimaryCardProps>`
           background-clip: content-box, border-box;
           background-repeat: no-repeat;
         `
-      : 
-        `
+      : `
           border-top: 5px solid ${props.theme[CARD_TYPES[props.type]]};
-        `
+        `}
+
+  &:hover {
+    filter: ${(props) => props.theme["card-hover"]};
   }
 `;
 
@@ -51,11 +53,10 @@ export const CardHeader = styled.header`
   gap: 0.5rem;
 
   strong {
-    color: ${props => props.theme["text-secondary"]};
+    color: ${(props) => props.theme["text-secondary"]};
     font-size: 0.75rem;
   }
-
-`
+`;
 
 export const CardBody = styled.div`
   display: flex;
@@ -64,34 +65,33 @@ export const CardBody = styled.div`
 
   h2 {
     font-size: 3rem;
-    color: ${props => props.theme["text-primary"]}
+    color: ${(props) => props.theme["text-primary"]};
   }
 
   span {
     text-transform: uppercase;
-    color: ${props => props.theme["text-secondary"]};
+    color: ${(props) => props.theme["text-secondary"]};
     letter-spacing: 0.35rem;
     font-size: 0.65rem;
   }
-`
+`;
 
 const CARD_FOOTER_COLORS = {
   positive: "lime-green",
-  negative: "bright-red"
+  negative: "bright-red",
 } as const;
 
 export type PrimaryCardFooterColorType = keyof typeof CARD_FOOTER_COLORS;
 
 interface IPrimaryCardFooterProps {
-  color: PrimaryCardFooterColorType
+  color: PrimaryCardFooterColorType;
 }
 
 export const CardFooter = styled.footer<IPrimaryCardFooterProps>`
   position: relative;
-  color: ${props => props.theme[CARD_FOOTER_COLORS[props.color]]};
+  color: ${(props) => props.theme[CARD_FOOTER_COLORS[props.color]]};
 
   display: flex;
   align-items: center;
   gap: 0.5rem;
-
-`
+`;
