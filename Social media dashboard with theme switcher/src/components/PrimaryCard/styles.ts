@@ -10,7 +10,7 @@ export const CARD_TYPES = {
 export type PrimaryCardBorderType = keyof typeof CARD_TYPES;
 
 interface IPrimaryCardProps {
-  type: PrimaryCardBorderType;
+  $type: PrimaryCardBorderType;
 }
 
 export const CardContainer = styled.div<IPrimaryCardProps>`
@@ -27,9 +27,9 @@ export const CardContainer = styled.div<IPrimaryCardProps>`
 
   border-radius: 4px;
   ${(props) =>
-    props.type === "instagram"
+    props.$type === "instagram"
       ? `
-          border-image: ${props.theme[CARD_TYPES[props.type]]} 1;
+          border-image: ${props.theme[CARD_TYPES[props.$type]]} 1;
           border-top: double 5px transparent;
           background-image: 
             linear-gradient(${props.theme["card-bg"]}, 
@@ -39,7 +39,7 @@ export const CardContainer = styled.div<IPrimaryCardProps>`
           background-repeat: no-repeat;
         `
       : `
-          border-top: 5px solid ${props.theme[CARD_TYPES[props.type]]};
+          border-top: 5px solid ${props.theme[CARD_TYPES[props.$type]]};
         `}
 
   &:hover {
@@ -84,12 +84,12 @@ const CARD_FOOTER_COLORS = {
 export type PrimaryCardFooterColorType = keyof typeof CARD_FOOTER_COLORS;
 
 interface IPrimaryCardFooterProps {
-  color: PrimaryCardFooterColorType;
+  $color: PrimaryCardFooterColorType;
 }
 
 export const CardFooter = styled.footer<IPrimaryCardFooterProps>`
   position: relative;
-  color: ${(props) => props.theme[CARD_FOOTER_COLORS[props.color]]};
+  color: ${(props) => props.theme[CARD_FOOTER_COLORS[props.$color]]};
 
   display: flex;
   align-items: center;

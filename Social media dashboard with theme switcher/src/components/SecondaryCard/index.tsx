@@ -8,11 +8,19 @@ import downSvg from "../../assets/images/icon-down.svg";
 
 import {
   CardBody,
-  SecondaryCardBorderType,
   CardContainer,
   CardHeader,
   SecondaryCardBodyColorType,
 } from "./styles";
+
+export const CARD_TYPES = {
+  twitter: "twitter",
+  facebook: "facebook",
+  youtube: "youtube",
+  instagram: "instagram",
+} as const;
+
+export type SecondaryCardBorderType = keyof typeof CARD_TYPES;
 
 interface ISecondaryCardProps {
   type: SecondaryCardBorderType;
@@ -37,16 +45,23 @@ export function SecondaryCard({
   footerText,
 }: ISecondaryCardProps) {
   return (
-    <CardContainer type={type}>
+    <CardContainer>
       <CardHeader>
         <strong>{amountType}</strong>
         <img src={CARD_ICONS[type]} alt={`${type} icon`} />
       </CardHeader>
 
-      <CardBody color={footerColor}>
+      <CardBody $color={footerColor}>
         <h2>{amount}</h2>
         <div>
-          <img src={footerColor === "positive" ? upSvg : downSvg} alt={footerColor === "positive" ? "up chevron icon" : "down chevron icon"} />
+          <img
+            src={footerColor === "positive" ? upSvg : downSvg}
+            alt={
+              footerColor === "positive"
+                ? "up chevron icon"
+                : "down chevron icon"
+            }
+          />
           <strong>{footerText}</strong>
         </div>
       </CardBody>

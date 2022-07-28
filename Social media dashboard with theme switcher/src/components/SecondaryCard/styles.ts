@@ -1,19 +1,6 @@
 import styled from "styled-components";
 
-export const CARD_TYPES = {
-  twitter: "twitter",
-  facebook: "facebook",
-  youtube: "youtube",
-  instagram: "instagram",
-} as const;
-
-export type SecondaryCardBorderType = keyof typeof CARD_TYPES;
-
-interface ISecondaryCardProps {
-  type: SecondaryCardBorderType;
-}
-
-export const CardContainer = styled.div<ISecondaryCardProps>`
+export const CardContainer = styled.div`
   position: relative;
   width: 15.625rem;
   height: 8rem;
@@ -52,7 +39,7 @@ const CARD_BODY_COLORS = {
 export type SecondaryCardBodyColorType = keyof typeof CARD_BODY_COLORS;
 
 interface ISecondaryCardBodyProps {
-  color: SecondaryCardBodyColorType;
+  $color: SecondaryCardBodyColorType;
 }
 
 export const CardBody = styled.div<ISecondaryCardBodyProps>`
@@ -68,7 +55,7 @@ export const CardBody = styled.div<ISecondaryCardBodyProps>`
 
   div {
     position: relative;
-    color: ${(props) => props.theme[CARD_BODY_COLORS[props.color]]};
+    color: ${(props) => props.theme[CARD_BODY_COLORS[props.$color]]};
     font-size: 0.75rem;
 
     display: flex;

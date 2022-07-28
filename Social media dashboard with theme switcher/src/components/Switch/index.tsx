@@ -7,8 +7,8 @@ interface ISwitchProps {
 
 export function Switch({ onChange }: ISwitchProps) {
   return (
-    <SwitchContainer>
-      <input type="checkbox" onChange={onChange} />
+    <SwitchContainer htmlFor="switch">
+      <input id="switch" name="switch" type="checkbox" onChange={onChange} aria-label="Toggle theme" />
       <span className="slider round"></span>
     </SwitchContainer>
   );

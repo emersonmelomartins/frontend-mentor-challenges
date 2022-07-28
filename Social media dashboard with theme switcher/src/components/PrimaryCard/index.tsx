@@ -40,7 +40,7 @@ export function PrimaryCard({
   footerText,
 }: IPrimaryCardProps) {
   return (
-    <CardContainer type={type}>
+    <CardContainer $type={type}>
       <CardHeader>
         <img src={CARD_ICONS[type]} alt={`${type} icon`} />
         <strong>{headerText}</strong>
@@ -51,7 +51,7 @@ export function PrimaryCard({
         <span>{amountType}</span>
       </CardBody>
 
-      <CardFooter color={footerColor}>
+      <CardFooter $color={footerColor}>
         <img src={footerColor === "positive" ? upSvg : downSvg} alt={footerColor === "positive" ? "up chevron icon" : "down chevron icon"} />
         <strong>{footerText}</strong>
       </CardFooter>
