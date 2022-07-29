@@ -85,15 +85,5 @@ export const CartItems = styled.div<ICartItemsProps>`
 `;
 
 export const CheckoutButton = styled.button`
-  background: ${(props) => props.theme.orange};
-  color: ${(props) => props.theme.white};
-  width: 100%;
-  padding: 1rem;
-  border: none;
-  border-radius: 8px;
-  transition: all 0.1s;
 
-  &:hover {
-    filter: brightness(1.15);
-  }
 `;

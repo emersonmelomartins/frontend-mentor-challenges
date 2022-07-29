@@ -4,6 +4,7 @@ import { CartItems, CheckoutButton } from "./styles";
 
 import deleteSvg from "../../assets/images/icon-delete.svg";
 import teste from "../../assets/images/image-product-1-thumbnail.jpg";
+import { Button } from "../Button/Button";
 
 export function Cart() {
   const [isCartItemsActive, setIsCartItemsActive] = useState(true);
@@ -66,7 +67,7 @@ export function Cart() {
                 </li>
               </ul>
 
-              <CheckoutButton type="button">Checkout</CheckoutButton>
+              <Button type="button">Checkout</Button>
             </>
           ) : (
             <strong className="no-items">Your cart is empty.</strong>
