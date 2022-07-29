@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ImageGallery } from "../../components/ImageGalery";
+import { ImageGallery } from "../../components/ImageGallery";
 import { Button } from "../../components/Button/Button";
 import { CartIcon } from "../../components/CartIcon";
 

@@ -14,6 +14,7 @@ export const ImageGalleryContainer = styled.div`
     img {
       border-radius: 8px;
       width: 100%;
+      cursor: pointer;
     }
 
     button {

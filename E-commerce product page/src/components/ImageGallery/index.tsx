@@ -14,6 +14,7 @@ import thumbnailProduct1Jpg from "../../assets/images/image-product-1-thumbnail.
 import thumbnailProduct2Jpg from "../../assets/images/image-product-2-thumbnail.jpg";
 import thumbnailProduct3Jpg from "../../assets/images/image-product-3-thumbnail.jpg";
 import thumbnailProduct4Jpg from "../../assets/images/image-product-4-thumbnail.jpg";
+import { ImageGalleryModal } from "../ImageGalleryModal";
 
 const PRODUCT_IMAGES = [
   imageProduct1Jpg,
@@ -38,6 +39,8 @@ interface IProductImage {
 export function ImageGallery() {
   const [productAlbum, setProductAlbum] = useState<IProductImage[]>([]);
   const [selectedImage, setSelectedImage] = useState<IProductImage>();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     let productImages: IProductImage[] = [];
@@ -94,6 +97,10 @@ export function ImageGallery() {
     setProductAlbum(updatedImages);
   }
 
+  function handleOpenModal() {
+    setIsModalOpen(true);
+  }
+
   return (
     <ImageGalleryContainer>
       <div className="selected-product-image">
@@ -101,7 +108,7 @@ export function ImageGallery() {
           <img src={previousSvg} alt="left chevron icon" />
         </button>
 
-        <img src={selectedImage?.src} alt="product image" />
+        <img src={selectedImage?.src} alt="product image" onClick={handleOpenModal} />
 
         <button type="button" onClick={() => handleNavigateImage(1)}>
           <img src={nextSvg} alt="right chevron icon" />
@@ -119,6 +126,8 @@ export function ImageGallery() {
           </li>
         ))}
       </ul>
+
+      <ImageGalleryModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
     </ImageGalleryContainer>
   );
 }
