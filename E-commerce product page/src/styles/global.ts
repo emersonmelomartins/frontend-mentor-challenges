@@ -20,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
 
 body {
   -webkit-font-smoothing: antialiased;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.white};
   margin: 0 auto;
 }
 
@@ -28,7 +28,7 @@ body,
 input,
 textarea,
 button {
-  font-family: sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 button {
@@ -44,5 +44,10 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+
+img {
+  display: block;
 }
 `;
