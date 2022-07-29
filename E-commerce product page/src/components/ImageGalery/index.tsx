@@ -1,4 +1,9 @@
+import { useEffect, useState } from "react";
+
 import { ImageGalleryContainer } from "./styles";
+
+import nextSvg from "../../assets/images/icon-next.svg";
+import previousSvg from "../../assets/images/icon-previous.svg";
 
 import imageProduct1Jpg from "../../assets/images/image-product-1.jpg";
 import imageProduct2Jpg from "../../assets/images/image-product-2.jpg";
@@ -9,8 +14,6 @@ import thumbnailProduct1Jpg from "../../assets/images/image-product-1-thumbnail.
 import thumbnailProduct2Jpg from "../../assets/images/image-product-2-thumbnail.jpg";
 import thumbnailProduct3Jpg from "../../assets/images/image-product-3-thumbnail.jpg";
 import thumbnailProduct4Jpg from "../../assets/images/image-product-4-thumbnail.jpg";
-
-import { useEffect, useState } from "react";
 
 const PRODUCT_IMAGES = [
   imageProduct1Jpg,
@@ -38,24 +41,21 @@ export function ImageGallery() {
 
   useEffect(() => {
     let productImages: IProductImage[] = [];
-    
-    for(let i = 0; i < PRODUCT_IMAGES.length; i++) {
+
+    for (let i = 0; i < PRODUCT_IMAGES.length; i++) {
       const currentImage = {
         src: PRODUCT_IMAGES[i],
         thumbnail: PRODUCT_THUMBNAILS[i],
         active: false,
       };
-  
+
       if (i === 0) {
         currentImage.active = true;
         setSelectedImage(currentImage);
       }
 
       productImages.push(currentImage);
-
     }
-
-    console.log(productImages);
 
     setProductAlbum(productImages);
   }, []);
@@ -73,10 +73,39 @@ export function ImageGallery() {
     setProductAlbum(updatedImages);
   }
 
+  function handleNavigateImage(imageControlWay: number) {
+    const currentImageIndex = productAlbum.findIndex(
+      (img) => img.src === selectedImage?.src
+    );
+
+    const nextImageIndex = currentImageIndex + imageControlWay;
+
+    if (!productAlbum[nextImageIndex]) return;
+
+    const updatedImages = productAlbum.map((img, index) => {
+      if (index === nextImageIndex) {
+        setSelectedImage(img);
+        return { ...img, active: true };
+      }
+
+      return { ...img, active: false };
+    });
+
+    setProductAlbum(updatedImages);
+  }
+
   return (
     <ImageGalleryContainer>
       <div className="selected-product-image">
+        <button type="button" onClick={() => handleNavigateImage(-1)}>
+          <img src={previousSvg} alt="left chevron icon" />
+        </button>
+
         <img src={selectedImage?.src} alt="product image" />
+
+        <button type="button" onClick={() => handleNavigateImage(1)}>
+          <img src={nextSvg} alt="right chevron icon" />
+        </button>
       </div>
 
       <ul className="product-image-album">
