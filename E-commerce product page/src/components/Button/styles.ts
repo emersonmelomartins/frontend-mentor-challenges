@@ -14,7 +14,7 @@ export const ButtonContent = styled.button`
   justify-content: center;
   gap: 1rem;
 
-  &:hover {
+  &:not(:disabled):hover {
     filter: brightness(1.15);
   }
 `;

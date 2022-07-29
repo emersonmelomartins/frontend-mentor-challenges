@@ -20,7 +20,7 @@ export const MenuContainer = styled.div`
 export const CartContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   position: relative;
 
   div.cart-content {

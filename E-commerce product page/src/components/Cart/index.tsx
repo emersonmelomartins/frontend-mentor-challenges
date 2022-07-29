@@ -1,19 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Button } from "../Button/Button";
 import { CartIcon } from "../CartIcon";
-import { CartItems, CheckoutButton } from "./styles";
+import { CartItems } from "./styles";
 
 import deleteSvg from "../../assets/images/icon-delete.svg";
 import teste from "../../assets/images/image-product-1-thumbnail.jpg";
-import { Button } from "../Button/Button";
 
 export function Cart() {
-  const [isCartItemsActive, setIsCartItemsActive] = useState(true);
+  const [isCartItemsActive, setIsCartItemsActive] = useState(false);
 
   const [cartItems, setCartItems] = useState([1]);
-
-  useEffect(() => {
-    console.log(isCartItemsActive);
-  }, [isCartItemsActive]);
 
   return (
     <div className="cart-content">

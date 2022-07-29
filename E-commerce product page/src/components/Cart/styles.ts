@@ -81,6 +81,7 @@ export const CartItems = styled.div<ICartItemsProps>`
     transform: translate(-70%, 0%);
     width: 25rem;
     margin: 0 auto;
+    z-index: 9999;
   }
 `;
 

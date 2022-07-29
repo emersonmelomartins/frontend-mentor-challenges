@@ -40,7 +40,7 @@ export const HomeContainer = styled.main`
     .product-price {
       display: flex;
       flex-direction: column;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
 
       strong {
         display: flex;
@@ -119,6 +119,14 @@ export const ProductAmount = styled.form`
       }
     }
 
+    button {
+      transition: filter 0.1s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+
     button:first-child {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
@@ -130,6 +138,7 @@ export const ProductAmount = styled.form`
   }
 
   button[type="submit"] {
+    box-shadow: 0px 1px 8px ${props => props.theme.orange};
     svg {
       path {
         fill: ${(props) => props.theme.white};

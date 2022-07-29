@@ -1,27 +1,30 @@
-import { HomeContainer, ProductAmount } from "./styles";
+import { useState } from "react";
 
-import imageProduct1Jpg from "../../assets/images/image-product-1.jpg";
+import { ImageGallery } from "../../components/ImageGalery";
+import { Button } from "../../components/Button/Button";
+import { CartIcon } from "../../components/CartIcon";
+
+import { HomeContainer, ProductAmount } from "./styles";
 
 import minusSvg from "../../assets/images/icon-minus.svg";
 import plusSvg from "../../assets/images/icon-plus.svg";
-import { Button } from "../../components/Button/Button";
-import { CartIcon } from "../../components/CartIcon";
-import { useState } from "react";
 
 export function Home() {
   const [amount, setAmount] = useState(0);
+
+  const isAmountBiggerThenZero = amount > 0;
 
   function handleIncrement() {
     setAmount(amount + 1);
   }
 
   function handleDecrement() {
-    setAmount(amount - 1);
+    setAmount(amount > 0 ? amount - 1 : 0);
   }
   return (
     <HomeContainer>
       <div className="product-image">
-        <img src={imageProduct1Jpg} alt="product image" />
+        <ImageGallery />
       </div>
 
       <div className="product-info">
@@ -55,7 +58,7 @@ export function Home() {
             </button>
           </div>
 
-          <Button type="submit">
+          <Button type="submit" disabled={!isAmountBiggerThenZero}>
             <CartIcon />
             Add to cart
           </Button>

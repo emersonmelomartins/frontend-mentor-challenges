@@ -73,7 +73,7 @@ export const Menu = styled.nav<IMenuProps>`
       order: 1;
       flex-direction: column;
       background: ${(props) => props.theme.white};
-      width: 25rem;
+      width: 60%;
 
       transition: all 0.1s;
 
