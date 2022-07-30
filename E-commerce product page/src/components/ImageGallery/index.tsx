@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { ImageGalleryContainer } from "./styles";
+import { ImageGalleryContainer, SelectedProductImage } from "./styles";
 
 import nextSvg from "../../assets/images/icon-next.svg";
 import previousSvg from "../../assets/images/icon-previous.svg";
@@ -36,7 +36,15 @@ interface IProductImage {
   active: boolean;
 }
 
-export function ImageGallery() {
+interface IImageGalleryProps {
+  isModalButtonTriggerActive?: boolean;
+  enableAndShowControlGalleryButton?: boolean;
+}
+
+export function ImageGallery({
+  enableAndShowControlGalleryButton = false,
+  isModalButtonTriggerActive = true,
+}: IImageGalleryProps) {
   const [productAlbum, setProductAlbum] = useState<IProductImage[]>([]);
   const [selectedImage, setSelectedImage] = useState<IProductImage>();
 
@@ -98,12 +106,12 @@ export function ImageGallery() {
   }
 
   function handleOpenModal() {
-    setIsModalOpen(true);
+    isModalButtonTriggerActive && setIsModalOpen(true);
   }
 
   return (
-    <ImageGalleryContainer>
-      <div className="selected-product-image">
+    <ImageGalleryContainer $showControlGalleryButton={enableAndShowControlGalleryButton}>
+      <SelectedProductImage $showControls={enableAndShowControlGalleryButton}>
         <button type="button" onClick={() => handleNavigateImage(-1)}>
           <img src={previousSvg} alt="left chevron icon" />
         </button>
@@ -113,7 +121,7 @@ export function ImageGallery() {
         <button type="button" onClick={() => handleNavigateImage(1)}>
           <img src={nextSvg} alt="right chevron icon" />
         </button>
-      </div>
+      </SelectedProductImage>
 
       <ul className="product-image-album">
         {productAlbum.map((image) => (
