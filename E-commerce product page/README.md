@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/ecommerce-product-page-with-react-vite-typescript-styledcomponent-l0YiZr2eI-](https://www.frontendmentor.io/solutions/ecommerce-product-page-with-react-vite-typescript-styledcomponent-l0YiZr2eI-)
 - Live Site URL: [https://neon-kataifi-b37a56.netlify.app/](https://neon-kataifi-b37a56.netlify.app/)
 
 ## My process
