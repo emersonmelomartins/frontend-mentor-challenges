@@ -21,7 +21,7 @@ export const CartItems = styled.div<ICartItemsProps>`
   transition: opacity 0.2s;
   border-radius: 8px;
 
-  header {
+  div.cart-header {
     padding: 1.2rem;
     border-bottom: 1px solid ${(props) => props.theme["light-gray"]};
   }

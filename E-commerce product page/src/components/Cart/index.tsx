@@ -24,9 +24,9 @@ export function Cart() {
       <CartIcon onClick={() => setIsCartItemsActive(!isCartItemsActive)} />
 
       <CartItems $show={isCartItemsActive}>
-        <header>
+        <div className="cart-header">
           <strong>Cart</strong>
-        </header>
+        </div>
 
         <div className="cart">
           {cartItems.length > 0 ? (

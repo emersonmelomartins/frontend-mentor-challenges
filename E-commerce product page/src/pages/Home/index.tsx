@@ -73,7 +73,7 @@ export function Home() {
             <button type="button" onClick={handleDecrement}>
               <img src={minusSvg} alt="minus icon" />
             </button>
-            <input type="text" readOnly value={amount} />
+            <input type="text" readOnly value={amount} aria-label="product amount" />
             <button type="button" onClick={handleIncrement}>
               <img src={plusSvg} alt="plus icon" />
             </button>
