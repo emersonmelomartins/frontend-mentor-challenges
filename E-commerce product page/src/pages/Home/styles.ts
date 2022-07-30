@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.main`
   max-width: 68.75rem;
-  /* height: calc(100vh - 7.1rem); */
   margin: 0 auto;
   width: 100%;
 
@@ -10,6 +9,8 @@ export const HomeContainer = styled.main`
   gap: 2rem;
 
   padding: 1rem;
+
+  overflow: hidden;
 
   .product-info,
   .product-image {
@@ -35,6 +36,7 @@ export const HomeContainer = styled.main`
     .product-description {
       color: ${(props) => props.theme["dark-grayish-blue"]};
       margin: 2rem 0;
+      line-height: 1.625rem;
     }
 
     .product-price {
@@ -83,7 +85,7 @@ export const HomeContainer = styled.main`
 
     .product-image {
       img {
-        width: 60%;
+        width: 100%;
         margin: 0 auto;
       }
     }

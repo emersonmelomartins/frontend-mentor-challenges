@@ -60,6 +60,7 @@ export const Menu = styled.nav<IMenuProps>`
 
   @media (max-width: 768px) {
     z-index: 9999;
+    height: 5rem;
 
     button.hamburger-btn {
       display: block;
@@ -79,7 +80,7 @@ export const Menu = styled.nav<IMenuProps>`
 
       button.close-btn {
         display: block;
-        padding: 40px 20px;
+        padding: 25px 20px;
       }
 
       li a {

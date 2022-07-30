@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
+import toast from "react-hot-toast";
+
+import { useCart } from "../../hooks/useCart";
 
 import { ImageGallery } from "../../components/ImageGallery";
 import { Button } from "../../components/Button/Button";
@@ -8,9 +12,23 @@ import { HomeContainer, ProductAmount } from "./styles";
 
 import minusSvg from "../../assets/images/icon-minus.svg";
 import plusSvg from "../../assets/images/icon-plus.svg";
+import productThumbnail from "../../assets/images/image-product-1-thumbnail.jpg";
+
+const PRODUCT = {
+  id: uuid(),
+  name: "Fall Limited Edition Sneakers",
+  description:
+    "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
+  price: 250.0,
+  brand: "Sneaker Company",
+  discount: 0.5,
+  image: productThumbnail,
+};
 
 export function Home() {
   const [amount, setAmount] = useState(0);
+
+  const { addProduct } = useCart();
 
   const isAmountBiggerThenZero = amount > 0;
 
@@ -21,6 +39,13 @@ export function Home() {
   function handleDecrement() {
     setAmount(amount > 0 ? amount - 1 : 0);
   }
+
+  function handleAddProductToCart() {
+    addProduct({ ...PRODUCT, amount });
+    setAmount(0);
+    toast.success("Product added to cart!");
+  }
+
   return (
     <HomeContainer>
       <div className="product-image">
@@ -28,23 +53,19 @@ export function Home() {
       </div>
 
       <div className="product-info">
-        <strong className="product-brand">Sneaker Company</strong>
+        <strong className="product-brand">{PRODUCT.brand}</strong>
 
-        <h1 className="product-title">Fall Limited Edition Sneakers</h1>
+        <h1 className="product-title">{PRODUCT.name}</h1>
 
-        <p className="product-description">
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they'll withstand everything
-          the weather can offer.
-        </p>
+        <p className="product-description">{PRODUCT.description}</p>
 
         <div className="product-price">
           <strong>
-            $125.00
-            <span className="price-discount">50%</span>
+            ${(PRODUCT.price * PRODUCT.discount).toFixed(2)}
+            <span className="price-discount">{PRODUCT.discount * 100}%</span>
           </strong>
 
-          <s>$250.00</s>
+          <s>${PRODUCT.price.toFixed(2)}</s>
         </div>
 
         <ProductAmount>
@@ -58,7 +79,11 @@ export function Home() {
             </button>
           </div>
 
-          <Button type="submit" disabled={!isAmountBiggerThenZero}>
+          <Button
+            type="submit"
+            disabled={!isAmountBiggerThenZero}
+            onClick={handleAddProductToCart}
+          >
             <CartIcon />
             Add to cart
           </Button>
